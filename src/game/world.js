@@ -641,8 +641,8 @@ export function frame(dt) {
   for (const fn of world.onFrame) fn(dt);
   const { gl, scene, overlay, camera } = world;
   gl.autoClear = false;
-  gl.clear();
-  gl.render(scene, camera);
+  if (world.composer) world.composer.render(dt);
+  else { gl.clear(); gl.render(scene, camera); }
   gl.clearDepth();
   gl.render(overlay, camera);
 }

@@ -96,7 +96,7 @@ export function Room() {
     <group>
       <mesh rotation-x={-Math.PI / 2}>
         <planeGeometry args={[16, 22]} />
-        <meshLambertMaterial map={floorTex} />
+        <meshStandardMaterial map={floorTex} roughness={0.36} metalness={0.04} envMapIntensity={0.45} />
       </mesh>
       <mesh rotation-x={Math.PI / 2} position-y={3.6}>
         <planeGeometry args={[16, 22]} />
@@ -261,9 +261,9 @@ export function Gondolas() {
 }
 function GondolaRuns() {
   const M = useMemo(() => ({
-    base: new THREE.MeshLambertMaterial({ color: '#d5dbd6' }), panel: new THREE.MeshLambertMaterial({ color: '#e8ece8' }),
-    shelf: new THREE.MeshLambertMaterial({ color: '#f6f7f5' }), lip: new THREE.MeshLambertMaterial({ color: '#ffffff' }),
-    cap: new THREE.MeshLambertMaterial({ color: '#dfe5e0' }), end: new THREE.MeshLambertMaterial({ color: '#cfe7da' }),
+    base: new THREE.MeshStandardMaterial({ color: '#d5dbd6', roughness: 0.55, metalness: 0.1, envMapIntensity: 0.4 }), panel: new THREE.MeshStandardMaterial({ color: '#e8ece8', roughness: 0.55, metalness: 0.1, envMapIntensity: 0.4 }),
+    shelf: new THREE.MeshStandardMaterial({ color: '#f6f7f5', roughness: 0.55, metalness: 0.1, envMapIntensity: 0.4 }), lip: new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 0.55, metalness: 0.1, envMapIntensity: 0.4 }),
+    cap: new THREE.MeshStandardMaterial({ color: '#dfe5e0', roughness: 0.55, metalness: 0.1, envMapIntensity: 0.4 }), end: new THREE.MeshStandardMaterial({ color: '#cfe7da', roughness: 0.55, metalness: 0.1, envMapIntensity: 0.4 }),
     shadow: new THREE.MeshBasicMaterial({ map: softShadowTexture(), transparent: true, opacity: 0.32, depthWrite: false, color: '#2e3b35' }),
   }), []);
   return GONDOLAS.map((g, gi) => {

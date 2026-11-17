@@ -37,3 +37,9 @@ Upload the `dist/` folder to any static host (Netlify, Vercel, GitHub Pages, Clo
 | `src/ui/Hud.jsx` | React UI: top bar, cart, product card, joystick, intro, receipt |
 
 Add `?plmdebug` to the URL to expose `window.__plm` for scripted testing.
+
+## Graphics quality
+Press **G** in the store to cycle Low / Medium / High (or add `?q=low`, `?q=medium`, `?q=high` to the URL).
+- Low: original flat look.
+- Medium: soft baked shadows, filmic tone mapping, 4x anti-aliasing, glossy floor.
+- High: Medium plus a soft bloom on bright lights.
